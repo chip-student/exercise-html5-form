@@ -1,0 +1,14 @@
+
+.parrafo{
+    font-size: small;
+}
+
+label{
+  color:black;
+}
+
+.input-radio{
+    width: 38%;
+    height: 20%;
+    background-color:grey;
+}

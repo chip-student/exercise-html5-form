@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b774c4ed98.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    <title>HTML5 Form</title>
+</head>
+
+<body>
+    <div class="container mb-4">
+        <form class="needs-validation mt-4" novalidate>
+            <div class="container border">
+                <div class="row border-bottom bg-light">
+                    <h1 class="ml-3">Payment form example</h1>
+                </div>
+                <div class="alert alert-danger mt-3" role="alert">
+                    Some fields are missing
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCard">Card #</label>
+                        <input type="text" class="form-control" id="inputCard" placeholder="XXXXXXXXXXXXXXXX" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid card.
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputcvc">CVC #</label>
+                        <input type="text" class="form-control" id="inputcvc" placeholder="0000" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid cvc.
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputAmount">Amount</label>
+                        <div class="input-group-prepend">
+                            <span class="font-weight-bold">$</span>
+                            <input type="number" class="form-control" id="inputAmount" placeholder="Amount" required>
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a valid amount.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="inputFirstName">First Name</label>
+                        <input type="text" class="form-control" id="inputFirstName">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputLastName">Last Name</label>
+                        <input type="text" class="form-control" id="inputLastName">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control custom-select custom-select-md" required>
+                            <option value="">Pick a state</option>
+                            <option value="1">Alabama</option>
+                            <option value="2">Alaska</option>
+                            <option value="3">Arizona</option>
+                            <option value="4">California</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputPostaCode">Postal Code</label>
+                        <input type="text" class="form-control" id="inputPostaCode" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid postal code.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="row">
+                            <label class="pl-3">We accept:</label>
+                        </div>
+                        <div class="form-inline rounded input-radio">
+                            <div class="form-check form-check-inline pl-2">
+                                <input type="radio" name="we_accept" checked value="">
+                                <i class="fab fa-cc-mastercard fa-lg"></i>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="we_accept" value=""><i class="fab fa-cc-visa fa-lg"></i>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="we_accept" value=""><i class="fab fa-cc-diners-club fa-lg"></i>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="we_accept" value="">
+                                <i class="fab fa-cc-amex fa-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputMessage">Message</label>
+                        <textarea id="inputMessage" rows="3" class="form-control" aria-label="With textarea"></textarea>
+                        <p class="text-secondary parrafo">Add any notes here.</p>
+                    </div>
+                </div>
+                <div class="row border-top d-flex justify-content-end bg-light">
+                    <div class="pr-1 mt-2 mb-2">
+                        <button class="btn btn-secondary btn-sm" type="submit">Cancel</button></div>
+                    <div class="pr-3 mt-2 mb-2"><button class="btn btn-primary btn-sm" type="submit">Send</button></div>
+                </div>
+            </div>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>
